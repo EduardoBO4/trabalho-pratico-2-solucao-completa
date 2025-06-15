@@ -4,64 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Detalhes do Filme - MoveEcho</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    main {
+      min-height: 80vh; /* para o footer ficar no fim */
+    }
+    /* Ajuste do botão voltar */
+    #btn-voltar {
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="bg-warning py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="mb-0">🎬 MoveEcho</h1>
-      <nav><a href="index.html" class="btn btn-light">Home</a></nav>
+  <!-- Cabeçalho -->
+  <header class="fixed-top bg-dark text-white py-2">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
+          <img src="logo.f.jpg" alt="Logo MoveEcho" style="width: 80px; height: auto; margin-right: 10px;" />
+          <h1 class="h4 mb-0">MoveEcho</h1>
+        </a>
+
+        <nav class="d-none d-md-flex">
+          <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+          <p class="mx-3"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+          <p class="mx-3"><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
+          <p class="mx-3"><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+          <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+        </nav>
+
+        <nav class="d-md-none">
+          <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <div id="menu" class="menu-list bg-dark p-3 rounded">
+            <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+            <p><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+            <p><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
+            <p><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+            <p><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="container my-4">
-    <div id="detalhes-filme"></div>
+  <main class="container my-5 pt-5">
+    <button id="btn-voltar" class="btn btn-secondary" onclick="window.history.back()">← Voltar</button>
+    <div id="detalhes-filme" class="row">
+      <!-- Conteúdo do filme será inserido aqui -->
+    </div>
   </main>
 
-  <footer class="bg-warning py-3 text-center">
-    <p class="mb-0">&copy; 2025 MoveEcho - Todos os direitos reservados.</p>
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <p>&copy; 2025 MoveEcho. Todos os direitos reservados.</p>
+    <p>Entre em contato: eduardoborgesdesouza4@gmail.com</p>
+    <p>Sobre nós | Termos de uso | Política de privacidade</p>
   </footer>
 
   <script>
-    function renderMovieDetails(movie) {
-      const container = document.getElementById('detalhes-filme');
-      if (!movie) {
-        container.innerHTML = `<p class="text-danger">Filme não encontrado.</p>`;
-        return;
-      }
+    const apiURL = 'http://localhost:3000/filmes'; // seu endpoint ou arquivo JSON local
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
 
-      container.innerHTML = `
-        <div class="row">
-          <div class="col-md-4">
-            <img src="${movie.imagem}" alt="${movie.titulo}" class="img-fluid rounded" />
-          </div>
-          <div class="col-md-8">
-            <h2>${movie.titulo}</h2>
-            <p><strong>Sinopse:</strong> ${movie.descricao}</p>
-            <p><strong>Diretor:</strong> ${movie.diretor}</p>
-            <p><strong>Duração:</strong> ${movie.duracao}</p>
-            <p><strong>Faixa Etária:</strong> ${movie.faixa_etaria}</p>
-            <a href="index.html" class="btn btn-primary mt-3">Voltar para Home</a>
-          </div>
-        </div>
-      `;
-    }
+    const detalhesFilme = document.getElementById('detalhes-filme');
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get('id');
-
-      fetch('db.json')
-        .then(res => res.json())
-        .then(data => {
-          const movie = data.filmes.find(f => f.id === id);
-          renderMovieDetails(movie);
+    if (!id) {
+      detalhesFilme.innerHTML = '<p class="text-danger">Filme não encontrado.</p>';
+    } else {
+      fetch(`${apiURL}/${id}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Filme não encontrado');
+          return res.json();
+        })
+        .then(filme => {
+          detalhesFilme.innerHTML = `
+            <div class="col-md-4 mb-4">
+              <img src="${filme.imagem}" alt="${filme.titulo}" class="img-fluid rounded shadow" />
+            </div>
+            <div class="col-md-8">
+              <h2>${filme.titulo}</h2>
+              <p><strong>Descrição:</strong> ${filme.descricao}</p>
+              <p><strong>Lançamento:</strong> ${filme.lancamento}</p>
+              <p><strong>Categoria:</strong> ${filme.categoria}</p>
+              <p><strong>Diretor:</strong> ${filme.diretor}</p>
+              <p><strong>Duração:</strong> ${filme.duracao}</p>
+              <p><strong>Faixa Etária:</strong> ${filme.faixa_etaria}</p>
+            </div>
+          `;
         })
         .catch(() => {
-          renderMovieDetails(null);
+          detalhesFilme.innerHTML = '<p class="text-danger">Erro ao carregar o filme.</p>';
         });
-    });
+    }
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
