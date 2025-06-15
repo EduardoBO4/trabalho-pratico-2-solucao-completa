@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - MoveEcho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+
+  <div class="card p-4 bg-secondary text-white" style="max-width: 400px; width: 100%;">
+    <header class="mb-4">
+        <!-- Imagem com link para a página inicial -->
+        <a href="index.html">
+            <img src="logo.f.jpg" alt="Logo MoveEcho" class="h-50 me-2" width="70px" >
+        </a>
+        <!-- Nome do site sem link -->
+        <span class="h4">MoveEcho</span>
+    </header>
+    <h2 class="text-center mb-4">Login</h2>
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+      </div>
+      <button type="submit" class="btn btn-warning w-100">Entrar</button>
+    </form>
+    <div class="text-center mt-3">
+      <p>Não tem uma conta? <a href="cadastro.html" class="text-warning text-decoration-none">Cadastre-se aqui</a></p>
+      <a href="index.html" class="btn btn-outline-light btn-sm mt-2">Voltar para Home</a>
+    </div>
+  </div>
+
+</body>
+</html>

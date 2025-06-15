@@ -1,0 +1,93 @@
+{
+  "filmes": [
+    {
+      "id": "1",
+      "titulo": "Vingadores: Ultimato",
+      "descricao": "Após os eventos devastadores de Vingadores: Guerra Infinita, os heróis sobreviventes se unem para reverter o estalo de Thanos e restaurar o equilíbrio do universo, culminando em uma épica batalha final.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "25 de abril de 2019 (Brasil)",
+      "categoria": "Ação, Aventura, Ficção Científica",
+      "diretor": "Anthony Russo, Joe Russo",
+      "duracao": "181 minutos",
+      "faixa_etaria": "12 anos"
+    },
+    {
+      "id": "2",
+      "titulo": "Up: Altas Aventuras",
+      "descricao": "Carl Fredricksen, um idoso viúvo, amarra milhares de balões em sua casa para realizar o sonho de conhecer a América do Sul. Sem querer, leva junto um escoteiro atrapalhado, e juntos vivem uma jornada emocionante.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "28 de agosto de 2009 (Brasil)",
+      "categoria": "Animação, Aventura, Comédia",
+      "diretor": "Pete Docter, Bob Peterson",
+      "duracao": "95 minutos",
+      "faixa_etaria": "Livre"
+    },
+    {
+      "id": "3",
+      "titulo": "WALL·E",
+      "descricao": "Em um futuro onde a Terra está coberta de lixo, o solitário robô WALL·E encontra uma nova razão para existir ao conhecer a moderna robô EVE, embarcando numa aventura espacial que pode salvar a humanidade.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "27 de junho de 2008 (EUA/Brasil)",
+      "categoria": "Animação, Ficção Científica, Romance",
+      "diretor": "Andrew Stanton",
+      "duracao": "98 minutos",
+      "faixa_etaria": "Livre"
+    },
+    {
+      "id": "4",
+      "titulo": "Toy Story",
+      "descricao": "Os brinquedos ganham vida quando os humanos não estão por perto, e a chegada de um novo brinquedo abala a vida do vaqueiro Woody.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "22 de novembro de 1995",
+      "categoria": "Animação, Aventura, Comédia",
+      "diretor": "John Lasseter",
+      "duracao": "81 minutos",
+      "faixa_etaria": "Livre"
+    },
+    {
+      "titulo": "Ainda Estou Aqui HEHEHHEHEH BR",
+      "descricao": "O filme retrata a trajetória de Eunice Paiva, esposa do ex-deputado Rubens Paiva, que desapareceu após ser preso pelo regime militar em 1971. Eunice, mãe de cinco filhos, enfrenta a repressão e a dor da perda, reinventando-se como advogada e defensora dos direitos humanos, enquanto busca justiça pelo desaparecimento do marido.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "7 de novembro de 2024",
+      "categoria": "Drama histórico, Biográfico",
+      "diretor": "Walter Salles",
+      "duracao": "135 minutos",
+      "faixa_etaria": "14 anos",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "titulo": "Elementos",
+      "descricao": "Em uma cidade onde os elementos naturais vivem em harmonia, uma jovem feita de fogo e um rapaz feito de água descobrem o quanto têm em comum.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "22 de junho de 2023",
+      "categoria": "Animação, Comédia, Fantasia",
+      "diretor": "Peter Sohn",
+      "duracao": "109 minutos",
+      "faixa_etaria": "Livre"
+    },
+    {
+      "titulo": "Demon Slayer: Castelo Infinito do dia bom  hehehhehe ",
+      "descricao": "Com o líder do Esquadrão de Caçadores em perigo, Tanjiro e os Hashira vão até sua base, mas são sugados em uma descida profunda para um espaço misterioso, graças a Muzan Kibutsuji. O destino onde Tanjiro e os Caçadores caem é a fortaleza dos Oni, o Castelo Infinito. E então, o campo de batalha está formado para dar início à luta final entre o Esquadrão de Caçadores e os Oni.",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "lancamento": "Último semestre de 2025",
+      "categoria": "Animação",
+      "diretor": "Haruo Sotozaki",
+      "duracao": "Indefinido",
+      "faixa_etaria": "Indefinido",
+      "id": "7"
+    },
+    {
+      "id": "f7b8",
+      "titulo": "Batata 223",
+      "descricao": "gsgasrgsregSERG",
+      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
+      "lancamento": "15/06/2024",
+      "categoria": "livre",
+      "diretor": "eu",
+      "duracao": "160min",
+      "faixa_etaria": "livre"
+    }
+  ],
+  "favoritos": []
+}

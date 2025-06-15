@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Filmes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-center mb-0">CRUD de Filmes 🎬</h1>
+            <a href="index.html" class="btn btn-warning">🏠 Voltar para Home</a>
+        </div>
+
+        <!-- Lista de filmes cadastrados -->
+        <div id="lista-filmes-crud" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+            <!-- Filmes para edição/exclusão serão carregados aqui -->
+        </div>
+
+        <hr class="border-light">
+
+        <!-- Formulário de cadastro/edição -->
+        <h3 class="mb-3">Adicionar / Editar Filme</h3>
+        <form id="form-filme" class="mb-5">
+            <input type="hidden" id="filme-id" />
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="titulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="titulo" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lancamento" class="form-label">Lançamento</label>
+                    <input type="text" class="form-control" id="lancamento" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <input type="text" class="form-control" id="categoria" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="diretor" class="form-label">Diretor</label>
+                    <input type="text" class="form-control" id="diretor" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="duracao" class="form-label">Duração</label>
+                    <input type="text" class="form-control" id="duracao" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="faixa_etaria" class="form-label">Faixa Etária</label>
+                    <input type="text" class="form-control" id="faixa_etaria" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea class="form-control" id="descricao" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagem" class="form-label">URL da Imagem</label>
+                <input type="url" class="form-control" id="imagem" />
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar Filme</button>
+            <button type="button" id="btn-cancelar" class="btn btn-secondary ms-2">Cancelar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap e JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function irParaFormulario() {
+            const formulario = document.getElementById('form-filme');
+            if (formulario) {
+                formulario.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+    <script src="/app.js"></script>
+</body>
+</html>

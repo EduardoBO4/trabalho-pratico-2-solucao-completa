@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MoveEcho - Catálogo de Filmes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="fixed-top bg-dark text-white py-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html">
+                    <img src="logo.f.jpg" alt="Logo MoveEcho" style="width: 80px; height: auto; margin-right: 10px;" />
+                </a>
+                <h1 class="h4 mb-0">MoveEcho</h1>
+                <nav class="d-none d-md-flex">
+                    <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+                    <p class="mx-3"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+                    <p class="mx-3"><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
+                    <p class="mx-3"><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+                    <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+                </nav>
+                <nav class="d-md-none">
+                    <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+                    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                    <div id="menu" class="menu-list bg-dark p-3 rounded">
+                        <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+                        <p><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+                        <p><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
+                        <p><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+                        <p><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-5 mt-4">
+        <!-- Banner -->
+        <section class="pt-5 mt-3 text-center">
+            <h2 class="mt-3">Opa cinéfilo, seja bem-vindo ao MoveEcho</h2>
+            <p>Seu site de avaliações e pesquisa de filmes favorito.</p>
+        </section>
+
+        <!-- Pesquisa -->
+        <section id="pesquisa" class="my-4">
+            <form action="#" class="d-flex justify-content-center" onsubmit="return false;">
+                <input type="text" id="search" placeholder="Pesquise por filmes..." class="form-control w-75" />
+                <button type="submit" class="btn btn-warning ms-2">Pesquisar</button>
+            </form>
+        </section>
+
+        <!-- Carrossel -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="0"
+                    class="active"
+                ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="detalhes.html?id=1">
+                        <img
+                            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Qa5bq0YghBRrJeOtiCnlbrvow82asTb1fz3tk-ySUBx5cXAosfjhMi-dFnDGQsmOxjlgToTxm7fV-tadzxTdCpHikWERusa6W6qyUiv8nXzbZavRJ-MY3ZDCvcmbnhKLVgFrX3BHwcEt/s1600/Vingadores_Ultimato_Marvel+Studios+%25281%2529.jpg"
+                            class="d-block w-100"
+                            alt="Vingadores: Ultimato"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg-dark px-2 py-1 rounded">Vingadores: Ultimato</h5>
+                            <p class="bg-dark px-2 py-1 rounded">
+                                O destino do universo será decidido… por aqueles que não desistem.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="detalhes.html?id=2">
+                        <img
+                            src="https://recreio.com.br/media/uploads/2024/10/up-altas-aventuras_capa-1.jpg"
+                            class="d-block w-100"
+                            alt="Up- Altas Aventuras"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg-dark px-2 py-1 rounded">Up - Altas Aventuras</h5>
+                            <p class="bg-dark px-2 py-1 rounded">
+                                As maiores aventuras começam com um simples ‘olá’.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="detalhes.html?id=3">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSVllaogQpeZY-E2EK4k9_s2MbCyfbxtl1A&s"
+                            class="d-block w-100"
+                            alt="WALL-E"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg-dark px-2 py-1 rounded">WALL-E</h5>
+                            <p class="bg-dark px-2 py-1 rounded">
+                                Às vezes, é preciso olhar para o que perdemos para redescobrir o que
+                                realmente importa.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <!-- Filmes Populares -->
+        <section class="container my-5">
+            <h2>Filmes Populares</h2>
+            <div id="lista-filmes" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Filmes dinâmicos via app.js -->
+            </div>
+
+            <!-- Botão para acessar o CRUD -->
+            <div class="text-center mt-4">
+                <a href="crud.html" class="btn btn-primary btn-lg">➕ Quero adicionar um filme</a>
+            </div>
+        </section>
+
+        <!-- Cadastro -->
+        <section id="cadastro" class="container my-5">
+            <h2>Cadastro de Usuário</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" />
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" />
+                </div>
+                <button type="submit" class="btn btn-warning w-100">Cadastrar</button>
+            </form>
+
+            <table class="table table-striped table-dark mt-4">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maria Silva</td>
+                        <td>maria@example.com</td>
+                        <td>*******</td>
+                    </tr>
+                    <tr>
+                        <td>João Souza</td>
+                        <td>joao@example.com</td>
+                        <td>*******</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 MoveEcho. Todos os direitos reservados.</p>
+        <p>Entre em contato: eduardoborgesdesouza4@gmail.com</p>
+        <p>Sobre nós | Termos de uso | Política de privacidade</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
