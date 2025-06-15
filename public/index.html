@@ -6,6 +6,26 @@
     <title>MoveEcho - Catálogo de Filmes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Estilo do coração */
+      .movie-card {
+        position: relative;
+      }
+      .favorite-icon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 24px;
+        color: gray;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        user-select: none;
+        z-index: 10;
+      }
+      .favorite-icon.favorited {
+        color: red;
+      }
+    </style>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -20,7 +40,7 @@
                     <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
                     <p class="mx-3"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
                     <p class="mx-3"><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
-                    <p class="mx-3"><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+                    <p class="mx-3"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
                     <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
                 </nav>
                 <nav class="d-md-none">
@@ -30,7 +50,7 @@
                         <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
                         <p><a href="login.html" class="text-white text-decoration-none">Login</a></p>
                         <p><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
-                        <p><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+                        <p><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
                         <p><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
                     </div>
                 </nav>
@@ -67,12 +87,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="detalhes.html?id=1">
+                    <a href="detalhes.html?id=1" class="movie-card">
                         <img
                             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Qa5bq0YghBRrJeOtiCnlbrvow82asTb1fz3tk-ySUBx5cXAosfjhMi-dFnDGQsmOxjlgToTxm7fV-tadzxTdCpHikWERusa6W6qyUiv8nXzbZavRJ-MY3ZDCvcmbnhKLVgFrX3BHwcEt/s1600/Vingadores_Ultimato_Marvel+Studios+%25281%2529.jpg"
                             class="d-block w-100"
                             alt="Vingadores: Ultimato"
                         />
+                        <span class="favorite-icon" data-id="1">&#9825;</span> <!-- coração vazio -->
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="bg-dark px-2 py-1 rounded">Vingadores: Ultimato</h5>
                             <p class="bg-dark px-2 py-1 rounded">
@@ -82,12 +103,13 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="detalhes.html?id=2">
+                    <a href="detalhes.html?id=2" class="movie-card">
                         <img
                             src="https://recreio.com.br/media/uploads/2024/10/up-altas-aventuras_capa-1.jpg"
                             class="d-block w-100"
                             alt="Up- Altas Aventuras"
                         />
+                        <span class="favorite-icon" data-id="2">&#9825;</span>
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="bg-dark px-2 py-1 rounded">Up - Altas Aventuras</h5>
                             <p class="bg-dark px-2 py-1 rounded">
@@ -97,12 +119,13 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="detalhes.html?id=3">
+                    <a href="detalhes.html?id=3" class="movie-card">
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSVllaogQpeZY-E2EK4k9_s2MbCyfbxtl1A&s"
                             class="d-block w-100"
                             alt="WALL-E"
                         />
+                        <span class="favorite-icon" data-id="3">&#9825;</span>
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="bg-dark px-2 py-1 rounded">WALL-E</h5>
                             <p class="bg-dark px-2 py-1 rounded">
@@ -137,7 +160,7 @@
         <section class="container my-5">
             <h2>Filmes Populares</h2>
             <div id="lista-filmes" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Filmes dinâmicos via app.js -->
+                <!-- Filmes dinâmicos via app.js, deve usar a mesma lógica para colocar o coração -->
             </div>
 
             <!-- Botão para acessar o CRUD -->
@@ -157,5 +180,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
     <script src="pesquisa.js"></script>
+    <script src="favs.js"></script>
 </body>
 </html>

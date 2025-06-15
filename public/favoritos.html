@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Favoritos - MoveEcho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .filme-card { position: relative; }
+    .filme-coracao {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      fill: red;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .filme-coracao:hover {
+      transform: scale(1.2);
+    }
+    /* Estilização do botão voltar */
+    #btn-voltar {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Meus Filmes Favoritos</h1>
+  </header>
+
+  <main class="container my-4">
+    <!-- Botão para voltar à home -->
+    <div class="mb-3 text-start">
+      <button id="btn-voltar" class="btn btn-primary">← Voltar para Home</button>
+    </div>
+
+    <div id="lista-favoritos" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Filmes favoritos serão inseridos aqui -->
+    </div>
+  </main>
+
+  <!-- Carrega o script de favoritos -->
+  <script src="favs.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Chama a função para renderizar os favoritos
+      if (typeof renderFavoritos === 'function') {
+        renderFavoritos();
+      } else {
+        console.error('Função renderFavoritos não encontrada no favs.js');
+      }
+
+      // Adiciona evento ao botão de voltar
+      const btnVoltar = document.getElementById('btn-voltar');
+      btnVoltar.addEventListener('click', () => {
+        window.location.href = 'index.html'; // Redireciona para a home
+      });
+    });
+  </script>
+</body>
+</html>
