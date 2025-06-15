@@ -129,6 +129,17 @@
       "diretor": " Ryan Coogler",
       "duracao": "3h 1m",
       "faixa_etaria": "16+"
+    },
+    {
+      "id": "51af",
+      "titulo": "Jogos mortais",
+      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://rollingstone.com.br/media/uploads/2023/09/swa-x-reproducao-lionsgate.jpg",
+      "lancamento": "2000-02-16",
+      "categoria": "Terror, Gore",
+      "diretor": "Anthony e Joe Russo",
+      "duracao": "160min",
+      "faixa_etaria": "12+"
     }
   ],
   "favoritos": []
