@@ -1,99 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Filme - MoveEcho </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhes do Filme - MoveEcho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="bg-warning py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="mb-0">🎬 MoveEcho</h1>
-            <nav>
-                <a href="index.html" class="btn btn-light">Home</a>
-            </nav>
+  <header class="bg-warning py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="mb-0">🎬 MoveEcho</h1>
+      <nav><a href="index.html" class="btn btn-light">Home</a></nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div id="detalhes-filme"></div>
+  </main>
+
+  <footer class="bg-warning py-3 text-center">
+    <p class="mb-0">&copy; 2025 MoveEcho - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function renderMovieDetails(movie) {
+      const container = document.getElementById('detalhes-filme');
+      if (!movie) {
+        container.innerHTML = `<p class="text-danger">Filme não encontrado.</p>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="row">
+          <div class="col-md-4">
+            <img src="${movie.imagem}" alt="${movie.titulo}" class="img-fluid rounded" />
+          </div>
+          <div class="col-md-8">
+            <h2>${movie.titulo}</h2>
+            <p><strong>Sinopse:</strong> ${movie.descricao}</p>
+            <p><strong>Diretor:</strong> ${movie.diretor}</p>
+            <p><strong>Duração:</strong> ${movie.duracao}</p>
+            <p><strong>Faixa Etária:</strong> ${movie.faixa_etaria}</p>
+            <a href="index.html" class="btn btn-primary mt-3">Voltar para Home</a>
+          </div>
         </div>
-    </header>
+      `;
+    }
 
-    <main class="container my-4">
-        <div id="detalhes-filme"></div>
-    </main>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
 
-    <footer class="bg-warning py-3 text-center">
-        <p class="mb-0">&copy; 2025 MoveEcho- Todos os direitos reservados por ele.</p>
-    </footer>
-
-    <script>
-        // Função para pegar o parâmetro 'id' da URL
-        function getMovieIdFromUrl() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get('id');
-        }
-
-        // Exemplo de dados locais (pode substituir por fetch para API real)
-        const filmes = [
-            {
-                id: "1",
-                titulo: "Vingadores: Ultimato",
-                imagem: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Qa5bq0YghBRrJeOtiCnlbrvow82asTb1fz3tk-ySUBx5cXAosfjhMi-dFnDGQsmOxjlgToTxm7fV-tadzxTdCpHikWERusa6W6qyUiv8nXzbZavRJ-MY3ZDCvcmbnhKLVgFrX3BHwcEt/s1600/Vingadores_Ultimato_Marvel+Studios+%25281%2529.jpg",
-                sinopse: "O destino do universo será decidido… por aqueles que não desistem.",
-                diretor: "Anthony e Joe Russo",
-                duracao: "3h 1min",
-                faixaEtaria: "14 anos"
-            },
-            {
-                id: "2",
-                titulo: "Up - Altas Aventuras",
-                imagem: "https://recreio.com.br/media/uploads/2024/10/up-altas-aventuras_capa-1.jpg",
-                sinopse: "As maiores aventuras começam com um simples ‘olá’.",
-                diretor: "Pete Docter",
-                duracao: "1h 36min",
-                faixaEtaria: "Livre"
-            },
-            {
-                id: "3",
-                titulo: "WALL-E",
-                imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSVllaogQpeZY-E2EK4k9_s2MbCyfbxtl1A&s",
-                sinopse: "Às vezes, é preciso olhar para o que perdemos para redescobrir o que realmente importa.",
-                diretor: "Andrew Stanton",
-                duracao: "1h 38min",
-                faixaEtaria: "Livre"
-            }
-        ];
-
-        // Função para renderizar detalhes do filme na página
-        function renderMovieDetails(movie) {
-            const container = document.getElementById('detalhes-filme');
-            if (!movie) {
-                container.innerHTML = `<p class="text-danger">Filme não encontrado.</p>`;
-                return;
-            }
-
-            container.innerHTML = `
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="${movie.imagem}" alt="${movie.titulo}" class="img-fluid rounded">
-                    </div>
-                    <div class="col-md-8">
-                        <h2>${movie.titulo}</h2>
-                        <p><strong>Sinopse:</strong> ${movie.sinopse}</p>
-                        <p><strong>Diretor:</strong> ${movie.diretor}</p>
-                        <p><strong>Duração:</strong> ${movie.duracao}</p>
-                        <p><strong>Faixa Etária:</strong> ${movie.faixaEtaria}</p>
-                        <a href="index.html" class="btn btn-primary mt-3">Voltar para Home</a>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Executa tudo ao carregar a página
-        document.addEventListener('DOMContentLoaded', () => {
-            const id = getMovieIdFromUrl();
-            const movie = filmes.find(f => f.id === id);
-            renderMovieDetails(movie);
+      fetch('db.json')
+        .then(res => res.json())
+        .then(data => {
+          const movie = data.filmes.find(f => f.id === id);
+          renderMovieDetails(movie);
+        })
+        .catch(() => {
+          renderMovieDetails(null);
         });
-    </script>
+    });
+  </script>
 </body>
 </html>
