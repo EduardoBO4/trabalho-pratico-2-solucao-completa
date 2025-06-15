@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputDuracao.value = filme.duracao || "";
             inputFaixaEtaria.value = filme.faixa_etaria || "";
 
-            // Aqui chama a função para rolar até o formulário
+            // Rola para o formulário
             irParaFormulario();
 
         } catch (error) {
