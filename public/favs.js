@@ -19,13 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Evento de clique nos ícones de favoritos
+  // Evento de clique nos ícones de favoritos - melhorado para área maior
   document.body.addEventListener('click', (e) => {
+    // Verifica se clicou no ícone ou dentro da área do ícone
+    let icon = null;
     if (e.target.classList.contains('favorite-icon')) {
+      icon = e.target;
+    } else if (e.target.closest('.favorite-icon')) {
+      icon = e.target.closest('.favorite-icon');
+    }
+    
+    if (icon) {
       e.preventDefault();
       e.stopPropagation();
 
-      const icon = e.target;
       const id = icon.dataset.id.toString();
       const index = favorites.indexOf(id);
 

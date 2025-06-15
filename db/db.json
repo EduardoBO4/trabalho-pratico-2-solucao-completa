@@ -11,6 +11,12 @@
       "nome": "Eduardo Borges de Souza",
       "email": "eduardoborgesdesouza4@gmail.com",
       "senha": "123456"
+    },
+    {
+      "id": "3tjzenbkg",
+      "nome": "joaozinho",
+      "email": "abc@gmail.com",
+      "senha": "098765"
     }
   ],
   "filmes": [
@@ -112,39 +118,6 @@
       "diretor": "Anthony Russo, Joe Russo",
       "duracao": "181 minutos",
       "faixa_etaria": "12 anos"
-    },
-    {
-      "id": "6b4e",
-      "titulo": "Batata 223",
-      "descricao": "ddddddddddddddddddddddddddddd",
-      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
-      "lancamento": "2025-06-17",
-      "categoria": "Animação",
-      "diretor": "eu",
-      "duracao": "1h 36m",
-      "faixa_etaria": "livre"
-    },
-    {
-      "id": "6751",
-      "titulo": "Batata 666",
-      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
-      "lancamento": "2025-06-26",
-      "categoria": "Drama histórico, Biográfico",
-      "diretor": "Walter Salles",
-      "duracao": "3h 1m",
-      "faixa_etaria": "Indefinido"
-    },
-    {
-      "id": "ae90",
-      "titulo": "Batata 999",
-      "descricao": "bbbbbbbbbbbbbbbbbbbbbb",
-      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
-      "lancamento": "2025-06-03",
-      "categoria": "Animação",
-      "diretor": "Diretor Exemplo",
-      "duracao": "1h 36m",
-      "faixa_etaria": "Indefinido"
     },
     {
       "id": "0a88",

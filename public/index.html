@@ -183,9 +183,40 @@
         <p>Sobre nós | Termos de uso | Política de privacidade</p>
     </footer>
 
+    <!-- Ícone de usuário flutuante -->
+    <div class="user-icon" id="user-icon">
+        <span>👤</span>
+    </div>
+    
+    <!-- Menu do usuário -->
+    <div class="user-menu" id="user-menu">
+        <div class="user-info" id="user-info-display" style="display: none;">
+            Olá, <span id="user-name-display"></span>!
+        </div>
+        <a href="login.html" class="user-menu-item" id="login-menu-item">
+            🔑 Fazer Login
+        </a>
+        <a href="cadastro.html" class="user-menu-item" id="register-menu-item">
+            📝 Cadastrar-se
+        </a>
+        <a href="favoritos.html" class="user-menu-item" id="favorites-menu-item" style="display: none;">
+            ❤️ Meus Favoritos
+        </a>
+        <a href="#" class="user-menu-item" id="logout-menu-item" style="display: none;">
+            🚪 Sair da Conta
+        </a>
+    </div>
+
+    <!-- Botão de favoritos flutuante -->
+    <a href="favoritos.html" class="favorites-btn hidden" id="favorites-btn">
+        ❤️
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
     <script src="app.js"></script>
     <script src="pesquisa.js"></script>
     <script src="favs.js"></script>
+    <script src="user-menu.js"></script>
 </body>
 </html>
