@@ -76,9 +76,20 @@
     if (!id) {
       detalhesFilme.innerHTML = '<p class="text-danger">Filme não encontrado.</p>';
     } else {
+      // Primeiro tenta buscar pelo ID exato, depois converte para number se necessário
       fetch(`${apiURL}/${id}`)
         .then(res => {
-          if (!res.ok) throw new Error('Filme não encontrado');
+          if (!res.ok) {
+            // Se não encontrar, tenta buscar todos os filmes e encontrar pelo ID
+            return fetch(apiURL).then(response => {
+              if (!response.ok) throw new Error('Erro ao buscar filmes');
+              return response.json();
+            }).then(filmes => {
+              const filme = filmes.find(f => f.id.toString() === id.toString());
+              if (!filme) throw new Error('Filme não encontrado');
+              return filme;
+            });
+          }
           return res.json();
         })
         .then(filme => {
@@ -87,7 +98,10 @@
               <img src="${filme.imagem}" alt="${filme.titulo}" class="img-fluid rounded shadow" />
             </div>
             <div class="col-md-8">
-              <h2>${filme.titulo}</h2>
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h2>${filme.titulo}</h2>
+                <span class="favorite-icon" data-id="${filme.id}" style="position: relative; top: 0; right: 0; font-size: 32px; color: gray; cursor: pointer; transition: all 0.3s ease; user-select: none; padding: 8px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.9); width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255, 255, 255, 0.5);">♡</span>
+              </div>
               <p><strong>Descrição:</strong> ${filme.descricao}</p>
               <p><strong>Lançamento:</strong> ${filme.lancamento}</p>
               <p><strong>Categoria:</strong> ${filme.categoria}</p>
@@ -96,8 +110,23 @@
               <p><strong>Faixa Etária:</strong> ${filme.faixa_etaria}</p>
             </div>
           `;
+
+          // Inicializar estado do favorito após renderizar
+          const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+          const heartIcon = document.querySelector('.favorite-icon');
+
+          if (usuarioLogado && heartIcon) {
+            const favorites = JSON.parse(localStorage.getItem(`favoritos_${usuarioLogado.id}`)) || [];
+            if (favorites.includes(filme.id.toString())) {
+              heartIcon.classList.add('favorited');
+              heartIcon.textContent = '♥';
+              heartIcon.style.color = '#ff0000';
+              heartIcon.style.borderColor = '#ff0000';
+            }
+          }
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error('Erro ao carregar filme:', error);
           detalhesFilme.innerHTML = '<p class="text-danger">Erro ao carregar o filme.</p>';
         });
     }
