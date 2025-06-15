@@ -97,20 +97,45 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(filme => {
                 detalhesFilme.innerHTML = `
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="${filme.imagem}" class="img-fluid" alt="${filme.titulo}">
+                    <div class="col-12 text-center mb-4">
+                      <div class="d-flex justify-content-center align-items-center mb-3">
+                        <h2 class="me-3 mb-0">${filme.titulo}</h2>
+                        <span class="favorite-icon" data-id="${filme.id}" style="font-size: 32px; color: gray; cursor: pointer; transition: all 0.3s ease; user-select: none; padding: 8px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.9); width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255, 255, 255, 0.5);">♡</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-4">
+                      <img src="${filme.imagem}" alt="${filme.titulo}" class="img-fluid rounded shadow" style="max-height: 500px; width: auto;" />
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <h5 class="card-title text-center mb-4">Informações do Filme</h5>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Descrição:</strong></div>
+                            <div class="col-8">${filme.descricao}</div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Lançamento:</strong></div>
+                            <div class="col-8">${filme.lancamento}</div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Categoria:</strong></div>
+                            <div class="col-8">${Array.isArray(filme.categoria) ? filme.categoria.join(', ') : filme.categoria}</div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Diretor:</strong></div>
+                            <div class="col-8">${filme.diretor}</div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Duração:</strong></div>
+                            <div class="col-8">${filme.duracao}</div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-4"><strong>Faixa Etária:</strong></div>
+                            <div class="col-8">${filme.faixa_etaria}</div>
+                          </div>
                         </div>
-                        <div class="col-md-6 text-start">
-                            <h2>${filme.titulo}</h2>
-                            <p><strong>Descrição:</strong> ${filme.descricao}</p>
-                            <p><strong>Data de Lançamento:</strong> ${filme.lancamento}</p>
-                            <p><strong>Categoria:</strong> ${filme.categoria}</p>
-                            <p><strong>Diretor:</strong> ${filme.diretor}</p>
-                            <p><strong>Duração:</strong> ${filme.duracao}</p>
-                            <p><strong>Faixa Etária:</strong> ${filme.faixa_etaria}</p>
-                            <button class="btn btn-warning btn-favoritar">Favoritar</button>
-                        </div>
+                      </div>
                     </div>
                 `;
             })
