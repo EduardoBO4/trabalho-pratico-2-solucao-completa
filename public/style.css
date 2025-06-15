@@ -522,6 +522,31 @@ main {
     min-height: calc(100vh - 120px);
 }
 
+/* Estilos específicos para estatísticas */
+#titulo-estatisticas {
+    color: #ff6600 !important;
+}
+
+#subtitulo-estatisticas {
+    color: #ffffff !important;
+}
+
+.text-primary {
+    color: #ff6600 !important;
+}
+
+.text-muted {
+    color: #cccccc !important;
+}
+
+.display-4 {
+    color: #ff6600 !important;
+}
+
+.lead {
+    color: #ffffff !important;
+}
+
 /* Formulários */
 .form-control {
     background-color: #2a2a2a !important;

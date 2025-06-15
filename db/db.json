@@ -26,7 +26,11 @@
       "descricao": "Após os eventos devastadores de Vingadores: Guerra Infinita, os heróis sobreviventes se unem para reverter o estalo de Thanos e restaurar o equilíbrio do universo, culminando em uma épica batalha final.",
       "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
       "lancamento": "2019",
-      "categoria": ["Ação", "Aventura", "Ficção Científica"],
+      "categoria": [
+        "Ação",
+        "Aventura",
+        "Ficção Científica"
+      ],
       "diretor": "Anthony Russo, Joe Russo",
       "duracao": "181 minutos",
       "faixa_etaria": "12 anos"
@@ -35,9 +39,13 @@
       "id": "2",
       "titulo": "Up: Altas Aventuras",
       "descricao": "Carl Fredricksen, um idoso viúvo, amarra milhares de balões em sua casa para realizar o sonho de conhecer a América do Sul. Sem querer, leva junto um escoteiro atrapalhado, e juntos vivem uma jornada emocionante.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/92/03/73/20176438.jpg",
       "lancamento": "2009",
-      "categoria": ["Animação", "Aventura", "Comédia"],
+      "categoria": [
+        "Animação",
+        "Aventura",
+        "Comédia"
+      ],
       "diretor": "Pete Docter, Bob Peterson",
       "duracao": "95 minutos",
       "faixa_etaria": "Livre"
@@ -46,9 +54,13 @@
       "id": "3",
       "titulo": "WALL·E",
       "descricao": "Em um futuro onde a Terra está coberta de lixo, o solitário robô WALL·E encontra uma nova razão para existir ao conhecer a moderna robô EVE, embarcando numa aventura espacial que pode salvar a humanidade.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://br.web.img2.acsta.net/medias/nmedia/18/91/31/05/20139182.jpg",
       "lancamento": "2008",
-      "categoria": ["Animação", "Ficção Científica", "Romance"],
+      "categoria": [
+        "Animação",
+        "Ficção Científica",
+        "Romance"
+      ],
       "diretor": "Andrew Stanton",
       "duracao": "98 minutos",
       "faixa_etaria": "Livre"
@@ -57,9 +69,13 @@
       "id": "4",
       "titulo": "Toy Story",
       "descricao": "Os brinquedos ganham vida quando os humanos não estão por perto, e a chegada de um novo brinquedo abala a vida do vaqueiro Woody.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/a/a7/Toy_Story_1995.jpg",
       "lancamento": "1995",
-      "categoria": ["Animação", "Aventura", "Comédia"],
+      "categoria": [
+        "Animação",
+        "Aventura",
+        "Comédia"
+      ],
       "diretor": "John Lasseter",
       "duracao": "81 minutos",
       "faixa_etaria": "Livre"
@@ -68,9 +84,12 @@
       "id": "5",
       "titulo": "Ainda Estou Aqui",
       "descricao": "O filme retrata a trajetória de Eunice Paiva, esposa do ex-deputado Rubens Paiva, que desapareceu após ser preso pelo regime militar em 1971. Eunice, mãe de cinco filhos, enfrenta a repressão e a dor da perda, reinventando-se como advogada e defensora dos direitos humanos, enquanto busca justiça pelo desaparecimento do marido.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/5/57/Ainda_Estou_Aqui_2024_poster.jpg",
       "lancamento": "2024",
-      "categoria": ["Drama", "Biográfico"],
+      "categoria": [
+        "Drama",
+        "Biográfico"
+      ],
       "diretor": "Walter Salles",
       "duracao": "135 minutos",
       "faixa_etaria": "14 anos"
@@ -79,9 +98,13 @@
       "id": "6",
       "titulo": "Elementos",
       "descricao": "Em uma cidade onde os elementos naturais vivem em harmonia, uma jovem feita de fogo e um rapaz feito de água descobrem o quanto têm em comum.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://br.web.img2.acsta.net/c_310_420/pictures/22/11/17/20/58/0132283.jpg",
       "lancamento": "2023",
-      "categoria": ["Animação", "Comédia", "Fantasia"],
+      "categoria": [
+        "Animação",
+        "Comédia",
+        "Fantasia"
+      ],
       "diretor": "Peter Sohn",
       "duracao": "109 minutos",
       "faixa_etaria": "Livre"
@@ -90,9 +113,13 @@
       "id": "7",
       "titulo": "Demon Slayer: Castelo Infinito",
       "descricao": "Com o líder do Esquadrão de Caçadores em perigo, Tanjiro e os Hashira vão até sua base, mas são sugados em uma descida profunda para um espaço misterioso, graças a Muzan Kibutsuji. O destino onde Tanjiro e os Caçadores caem é a fortaleza dos Oni, o Castelo Infinito. E então, o campo de batalha está formado para dar início à luta final entre o Esquadrão de Caçadores e os Oni.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://i.redd.it/6qt67lko12me1.jpeg",
       "lancamento": "2025",
-      "categoria": ["Animação", "Ação", "Aventura"],
+      "categoria": [
+        "Animação",
+        "Ação",
+        "Aventura"
+      ],
       "diretor": "Haruo Sotozaki",
       "duracao": "Indefinido",
       "faixa_etaria": "Indefinido"
@@ -101,9 +128,13 @@
       "id": "8",
       "titulo": "Encanto",
       "descricao": "Em uma família mágica nas montanhas da Colômbia, uma jovem é a única sem poderes, mas pode ser a chave para salvar seu lar encantado.",
-      "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/thumb/8/83/Encanto_poster.jpg/250px-Encanto_poster.jpg",
       "lancamento": "2021",
-      "categoria": ["Animação", "Fantasia", "Musical"],
+      "categoria": [
+        "Animação",
+        "Fantasia",
+        "Musical"
+      ],
       "diretor": "Jared Bush, Byron Howard",
       "duracao": "109 minutos",
       "faixa_etaria": "Livre"
@@ -114,7 +145,11 @@
       "descricao": "Um filme qualquer.",
       "imagem": "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-vingadores-ultimato-a-pop-arte-poster/poparteskins2/15938529468/51fe38475c0d21cc9c097af8afa172c2.jpeg",
       "lancamento": "2019",
-      "categoria": ["Ação", "Aventura", "Ficção Científica"],
+      "categoria": [
+        "Ação",
+        "Aventura",
+        "Ficção Científica"
+      ],
       "diretor": "Anthony Russo, Joe Russo",
       "duracao": "181 minutos",
       "faixa_etaria": "12 anos"
@@ -125,7 +160,10 @@
       "descricao": "Vampiro e música",
       "imagem": "https://www.claquete.com.br/fotos/filmes/poster/16240_medio.jpg",
       "lancamento": "2025",
-      "categoria": ["Ação", "Terror"],
+      "categoria": [
+        "Ação",
+        "Terror"
+      ],
       "diretor": "Ryan Coogler",
       "duracao": "3h 1m",
       "faixa_etaria": "16+"
@@ -136,10 +174,24 @@
       "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "imagem": "https://rollingstone.com.br/media/uploads/2023/09/swa-x-reproducao-lionsgate.jpg",
       "lancamento": "2000",
-      "categoria": ["Terror", "Gore"],
+      "categoria": [
+        "Terror",
+        "Gore"
+      ],
       "diretor": "Anthony e Joe Russo",
       "duracao": "160min",
       "faixa_etaria": "12+"
+    },
+    {
+      "id": "a74d",
+      "titulo": "JUJU DO PIX",
+      "descricao": "uma caloteira qualquer ",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjfudi5pwBsfwUYi3CJwjV2Lh8md2Wzrh-iA&s",
+      "lancamento": "2025-06-26",
+      "categoria": "info",
+      "diretor": "mae da igona",
+      "duracao": "Indefinido",
+      "faixa_etaria": "18+"
     }
   ],
   "favoritos": []

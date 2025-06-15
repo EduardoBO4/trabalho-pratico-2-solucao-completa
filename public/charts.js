@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 padding: 20,
                                 font: {
                                     size: 12
-                                }
+                                },
+                                color: '#ffffff'
                             }
                         },
                         tooltip: {
@@ -127,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 stepSize: 1,
                                 font: {
                                     size: 12
-                                }
+                                },
+                                color: '#ffffff'
                             },
                             title: {
                                 display: true,
@@ -135,14 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
                                 font: {
                                     size: 14,
                                     weight: 'bold'
-                                }
+                                },
+                                color: '#ffffff'
                             }
                         },
                         x: {
                             ticks: {
                                 font: {
                                     size: 12
-                                }
+                                },
+                                color: '#ffffff'
                             },
                             title: {
                                 display: true,
@@ -150,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 font: {
                                     size: 14,
                                     weight: 'bold'
-                                }
+                                },
+                                color: '#ffffff'
                             }
                         }
                     }
