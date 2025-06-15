@@ -1,34 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <title>Favoritos - MoveEcho</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    .filme-card { position: relative; }
-    .filme-coracao {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 24px;
-      height: 24px;
-      fill: red;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .filme-coracao:hover {
-      transform: scale(1.2);
-    }
-    /* Estilização do botão voltar */
-    #btn-voltar {
-      margin-bottom: 15px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Favoritos - MoveEcho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="bg-dark text-white p-3 text-center">
+  <!-- Cabeçalho -->
+  <header class="fixed-top bg-dark text-white py-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html">
+                    <img src="logo.f.jpg" alt="Logo MoveEcho" style="width: 80px; height: auto; margin-right: 10px;" />
+                </a>
+                <h1 class="h4 mb-0">MoveEcho</h1>
+                <nav class="d-none d-md-flex">
+          <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+          <p class="mx-3" id="menu-login-desktop"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+          <p class="mx-3" id="menu-favoritos-desktop" style="display: none;"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
+          <p class="mx-3" id="menu-logout-desktop" style="display: none;">
+            <span class="text-white me-2">Olá, <span id="nome-usuario-desktop"></span>!</span>
+            <a href="#" id="logout-btn" class="text-white text-decoration-none">Logout</a>
+          </p>
+        </nav>
+                <nav class="d-md-none">
+                    <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+                    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                    <div id="menu" class="menu-list bg-dark p-3 rounded">
+            <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+            <p id="menu-login"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+            <p id="menu-favoritos" style="display: none;"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
+            <p id="menu-logout" style="display: none;">
+              <span class="text-white d-block mb-2">Olá, <span id="nome-usuario"></span>!</span>
+              <a href="#" class="text-white text-decoration-none" onclick="logout()">Logout</a>
+            </p>
+          </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+  <div class="bg-dark text-white py-4 mt-5 pt-4 text-center">
     <h1>Meus Filmes Favoritos</h1>
-  </header>
+  </div>
 
   <main class="container my-4">
     <!-- Botões de navegação -->
@@ -46,7 +62,7 @@
   <footer class="bg-dark text-white py-4 mt-4">
     <div class="container">
       <div class="row align-items-center">
-        
+
           <div class="col-md-3 text-center mb-3">
             <img src="/public/imagens/minha foto.jpg" alt="Eduardo Borges de Souza" class="rounded-circle mb-2" style="width: 80px; height: 80px; object-fit: cover;">
             <h6 class="mb-0">Eduardo Borges de Souza</h6>
@@ -77,7 +93,7 @@
               </a>
             </div>
           </div>
-       
+
       </div>
       <hr class="my-3">
       <div class="text-center">
@@ -89,6 +105,7 @@
   <!-- Carrega os scripts -->
   <script src="auth.js"></script>
   <script src="favs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Verificar se usuário está logado
