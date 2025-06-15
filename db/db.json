@@ -109,6 +109,28 @@
       "diretor": "eu",
       "duracao": "1h 36m",
       "faixa_etaria": "livre"
+    },
+    {
+      "id": "6751",
+      "titulo": "Batata 666",
+      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
+      "lancamento": "2025-06-26",
+      "categoria": "Drama histórico, Biográfico",
+      "diretor": "Walter Salles",
+      "duracao": "3h 1m",
+      "faixa_etaria": "Indefinido"
+    },
+    {
+      "id": "ae90",
+      "titulo": "Batata 999",
+      "descricao": "bbbbbbbbbbbbbbbbbbbbbb",
+      "imagem": "https://i.redd.it/edjm10ytdvd51.png",
+      "lancamento": "2025-06-03",
+      "categoria": "Animação",
+      "diretor": "Diretor Exemplo",
+      "duracao": "1h 36m",
+      "faixa_etaria": "Indefinido"
     }
   ],
   "favoritos": []

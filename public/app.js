@@ -34,19 +34,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.add('col');
 
                     card.innerHTML = `
-                        <div class="card h-100">
+                        <div class="card h-100 movie-card">
                             <img src="${filme.imagem}" class="card-img-top" alt="${filme.titulo}">
+                            <span class="favorite-icon" data-id="${filme.id}">♡</span>
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">${filme.titulo}</h5>
                                 <p class="card-text">${filme.descricao}</p>
                                 <div class="mt-auto">
                                     <a href="detalhes.html?id=${filme.id}" class="btn btn-warning mb-2">Ver Detalhes</a>
-                                    <button class="btn btn-warning btn-favoritar">Favoritar</button>
                                 </div>
                             </div>
                         </div>
                     `;
                     listaFilmes.appendChild(card);
+
+                    // Atualizar estado do coração baseado nos favoritos salvos
+                    const favorites = JSON.parse(localStorage.getItem('favoritos')) || [];
+                    const heartIcon = card.querySelector('.favorite-icon');
+                    if (favorites.includes(filme.id.toString())) {
+                        heartIcon.classList.add('favorited');
+                        heartIcon.textContent = '♥';
+                    }
                 });
 
                 const searchBar = document.getElementById('searchBar');

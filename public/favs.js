@@ -44,30 +44,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function renderFavoritos() {
+async function renderFavoritos() {
   const lista = document.getElementById('lista-favoritos');
   const favorites = JSON.parse(localStorage.getItem('favoritos')) || [];
 
-  const filmes = [
-    {
-      id: '1',
-      titulo: 'Vingadores: Ultimato',
-      descricao: 'O destino do universo será decidido… por aqueles que não desistem.',
-      imagem: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Qa5bq0YghBRrJeOtiCnlbrvow82asTb1fz3tk-ySUBx5cXAosfjhMi-dFnDGQsmOxjlgToTxm7fV-tadzxTdCpHikWERusa6W6qyUiv8nXzbZavRJ-MY3ZDCvcmbnhKLVgFrX3BHwcEt/s1600/Vingadores_Ultimato_Marvel+Studios+%25281%2529.jpg'
-    },
-    {
-      id: '2',
-      titulo: 'Up - Altas Aventuras',
-      descricao: 'As maiores aventuras começam com um simples “olá”.',
-      imagem: 'https://recreio.com.br/media/uploads/2024/10/up-altas-aventuras_capa-1.jpg'
-    },
-    {
-      id: '3',
-      titulo: 'WALL-E',
-      descricao: 'Às vezes, é preciso olhar para o que perdemos para redescobrir o que realmente importa.',
-      imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSVllaogQpeZY-E2EK4k9_s2MbCyfbxtl1A&s'
-    }
-  ];
+  // Buscar filmes da API
+  let filmes = [];
+  try {
+    const response = await fetch('http://localhost:3000/filmes');
+    filmes = await response.json();
+  } catch (error) {
+    console.error('Erro ao carregar filmes da API:', error);
+    // Fallback para filmes estáticos se a API não estiver disponível
+    filmes = [
+      {
+        id: '1',
+        titulo: 'Vingadores: Ultimato',
+        descricao: 'O destino do universo será decidido… por aqueles que não desistem.',
+        imagem: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Qa5bq0YghBRrJeOtiCnlbrvow82asTb1fz3tk-ySUBx5cXAosfjhMi-dFnDGQsmOxjlgToTxm7fV-tadzxTdCpHikWERusa6W6qyUiv8nXzbZavRJ-MY3ZDCvcmbnhKLVgFrX3BHwcEt/s1600/Vingadores_Ultimato_Marvel+Studios+%25281%2529.jpg'
+      },
+      {
+        id: '2',
+        titulo: 'Up - Altas Aventuras',
+        descricao: 'As maiores aventuras começam com um simples "olá".',
+        imagem: 'https://recreio.com.br/media/uploads/2024/10/up-altas-aventuras_capa-1.jpg'
+      },
+      {
+        id: '3',
+        titulo: 'WALL-E',
+        descricao: 'Às vezes, é preciso olhar para o que perdemos para redescobrir o que realmente importa.',
+        imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSVllaogQpeZY-E2EK4k9_s2MbCyfbxtl1A&s'
+      }
+    ];
+  }
 
   const filmesFavoritos = filmes.filter(filme => favorites.includes(filme.id));
 
