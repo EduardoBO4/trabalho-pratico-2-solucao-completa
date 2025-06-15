@@ -305,6 +305,14 @@ footer {
     border-top: 2px solid #ff6600;
 }
 
+footer * {
+    color: white !important;
+}
+
+footer h6, footer p, footer small {
+    color: white !important;
+}
+
 /* Media Queries para Responsividade */
 @media (max-width: 480px) {
     .nav-mobile {
