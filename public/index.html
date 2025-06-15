@@ -37,22 +37,28 @@
                 </a>
                 <h1 class="h4 mb-0">MoveEcho</h1>
                 <nav class="d-none d-md-flex">
-                    <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-                    <p class="mx-3"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
-                    <p class="mx-3"><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
-                    <p class="mx-3"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
-                    <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
-                </nav>
+          <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+          <p class="mx-3" id="menu-login-desktop"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+          <p class="mx-3" id="menu-favoritos-desktop" style="display: none;"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
+          <p class="mx-3" id="menu-logout-desktop" style="display: none;">
+            <span class="text-white me-2">Olá, <span id="nome-usuario-desktop"></span>!</span>
+            <a href="#" id="logout-btn" class="text-white text-decoration-none">Logout</a>
+          </p>
+          <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+        </nav>
                 <nav class="d-md-none">
                     <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
                     <label for="menu-toggle" class="menu-icon">&#9776;</label>
                     <div id="menu" class="menu-list bg-dark p-3 rounded">
-                        <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-                        <p><a href="login.html" class="text-white text-decoration-none">Login</a></p>
-                        <p><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
-                        <p><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
-                        <p><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
-                    </div>
+            <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+            <p id="menu-login"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+            <p id="menu-favoritos" style="display: none;"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
+            <p id="menu-logout" style="display: none;">
+              <span class="text-white d-block mb-2">Olá, <span id="nome-usuario"></span>!</span>
+              <a href="#" class="text-white text-decoration-none" onclick="logout()">Logout</a>
+            </p>
+            <p><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
+          </div>
                 </nav>
             </div>
         </div>
@@ -168,7 +174,7 @@
                 <a href="crud.html" class="btn btn-primary btn-lg">➕ Quero adicionar um filme</a>
             </div>
         </section>
-        
+
 
     <!-- Rodapé -->
     <footer class="bg-dark text-white text-center py-3">

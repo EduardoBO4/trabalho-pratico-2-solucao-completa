@@ -49,11 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     listaFilmes.appendChild(card);
 
                     // Atualizar estado do coração baseado nos favoritos salvos
-                    const favorites = JSON.parse(localStorage.getItem('favoritos')) || [];
+                    const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
                     const heartIcon = card.querySelector('.favorite-icon');
-                    if (favorites.includes(filme.id.toString())) {
-                        heartIcon.classList.add('favorited');
-                        heartIcon.textContent = '♥';
+                    
+                    if (usuarioLogado) {
+                        const favorites = JSON.parse(localStorage.getItem(`favoritos_${usuarioLogado.id}`)) || [];
+                        if (favorites.includes(filme.id.toString())) {
+                            heartIcon.classList.add('favorited');
+                            heartIcon.textContent = '♥';
+                        }
+                    } else {
+                        // Se não estiver logado, mostrar coração vazio
+                        heartIcon.textContent = '♡';
                     }
                 });
 

@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const favorites = JSON.parse(localStorage.getItem('favoritos')) || [];
+  // Verificar se usuário está logado para mostrar favoritos corretamente
+  const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+  let favorites = [];
+  
+  if (usuarioLogado) {
+    // Se logado, carregar favoritos do usuário
+    favorites = JSON.parse(localStorage.getItem(`favoritos_${usuarioLogado.id}`)) || [];
+  }
 
   // Atualiza os ícones de favoritos na página (index ou outra)
   document.querySelectorAll('.favorite-icon').forEach(icon => {
@@ -22,6 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = icon.dataset.id.toString();
       const index = favorites.indexOf(id);
 
+      // Verificar se usuário está logado antes de permitir favoritar
+      const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+      if (!usuarioLogado) {
+        alert('Você precisa estar logado para favoritar filmes.');
+        window.location.href = 'login.html';
+        return;
+      }
+
       if (index > -1) {
         favorites.splice(index, 1); // Remove dos favoritos
         icon.classList.remove('favorited');
@@ -32,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.textContent = '♥';
       }
 
-      // Atualiza o localStorage
-      localStorage.setItem('favoritos', JSON.stringify(favorites));
+      // Atualiza o localStorage com ID do usuário
+      localStorage.setItem(`favoritos_${usuarioLogado.id}`, JSON.stringify(favorites));
       console.log('Favoritos atualizados:', favorites);
     }
   });
@@ -46,7 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function renderFavoritos() {
   const lista = document.getElementById('lista-favoritos');
-  const favorites = JSON.parse(localStorage.getItem('favoritos')) || [];
+  const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+  
+  if (!usuarioLogado) {
+    lista.innerHTML = `<p class="text-center">Você precisa estar logado para ver seus favoritos.</p>`;
+    return;
+  }
+  
+  const favorites = JSON.parse(localStorage.getItem(`favoritos_${usuarioLogado.id}`)) || [];
 
   // Buscar filmes da API
   let filmes = [];

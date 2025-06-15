@@ -1,97 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro - MoveEcho</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+    }
+    .cadastro-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .logo-container img {
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .form-control {
+      border-radius: 10px;
+      border: 2px solid #e9ecef;
+      padding: 0.75rem 1rem;
+    }
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    .btn-cadastro {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 10px;
+      padding: 0.75rem;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .btn-cadastro:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .alert {
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body class="bg-dark text-white d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
-  <div class="card p-4 bg-secondary text-white" style="max-width: 400px; width: 100%;">
-    <header class="mb-4 d-flex align-items-center">
-      <a href="index.html">
-        <img src="logo.f.jpg" alt="Logo MoveEcho" class="h-50 me-2" width="70px" />
-      </a>
-      <span class="h4 mb-0">MoveEcho</span>
-    </header>
-    <h2 class="text-center mb-4">Criar Conta</h2>
-    <form id="formCadastro" novalidate>
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome completo</label>
-        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required />
-        <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="cadastro-card">
+          <div class="logo-container">
+            <a href="index.html">
+              <img src="logo.f.jpg" alt="Logo MoveEcho" width="80" height="80">
+            </a>
+            <h2 class="mt-3 text-dark">MoveEcho</h2>
+            <p class="text-muted">Crie sua conta</p>
+          </div>
+
+          <div id="alert-container"></div>
+
+          <form id="cadastroForm" novalidate>
+            <div class="mb-3">
+              <label for="nome" class="form-label text-dark">Nome completo</label>
+              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+              <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label text-dark">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+              <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+            </div>
+            <div class="mb-4">
+              <label for="senha" class="form-label text-dark">Senha</label>
+              <input type="password" class="form-control" id="senha" placeholder="Crie uma senha (min. 6 caracteres)" minlength="6" required>
+              <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
+            </div>
+            <button type="submit" class="btn btn-cadastro text-white w-100 mb-3">
+              <span id="cadastroText">Criar Conta</span>
+              <span id="cadastroSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+            </button>
+          </form>
+
+          <div class="text-center">
+            <p class="text-muted mb-2">Já tem uma conta? 
+              <a href="login.html" class="text-decoration-none">Faça login</a>
+            </p>
+            <a href="index.html" class="btn btn-outline-secondary btn-sm">Voltar para Home</a>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required />
-        <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
-      </div>
-      <div class="mb-3">
-        <label for="senha" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" minlength="6" required />
-        <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
-      </div>
-      <button type="submit" class="btn btn-warning w-100">Cadastrar</button>
-    </form>
-    <div class="text-center mt-3">
-      <a href="login.html" class="text-warning text-decoration-none">Já tem conta? Faça login</a><br />
-      <a href="index.html" class="btn btn-outline-light btn-sm mt-2">Voltar para Home</a>
-    </div>
-    <div id="msg-sucesso" class="alert alert-success mt-3 d-none" role="alert">
-      Cadastro realizado com sucesso!
     </div>
   </div>
 
   <script>
-    const form = document.getElementById('formCadastro');
-    const msgSucesso = document.getElementById('msg-sucesso');
+    document.addEventListener('DOMContentLoaded', () => {
+      const cadastroForm = document.getElementById('cadastroForm');
+      const alertContainer = document.getElementById('alert-container');
+      const cadastroText = document.getElementById('cadastroText');
+      const cadastroSpinner = document.getElementById('cadastroSpinner');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Limpar mensagens anteriores
-      msgSucesso.classList.add('d-none');
-
-      // Validar campos com HTML5
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        return;
+      function showAlert(message, type = 'danger') {
+        alertContainer.innerHTML = `
+          <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        `;
       }
 
-      // Pegar valores
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const senha = document.getElementById('senha').value;
-
-      // Validar manualmente (exemplo)
-      if (nome.length === 0) {
-        alert('Por favor, insira seu nome completo.');
-        return;
-      }
-      if (senha.length < 6) {
-        alert('A senha deve ter pelo menos 6 caracteres.');
-        return;
+      function generateId() {
+        return Math.random().toString(36).substr(2, 9);
       }
 
-      // Simular cadastro (salvar no localStorage)
-      const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+      cadastroForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-      // Verificar se email já existe
-      const existe = usuarios.some(user => user.email === email);
-      if (existe) {
-        alert('Este e-mail já está cadastrado.');
-        return;
-      }
+        // Limpar mensagens anteriores
+        alertContainer.innerHTML = '';
 
-      // Adicionar novo usuário
-      usuarios.push({ nome, email, senha });
-      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('senha').value;
 
-      // Mostrar mensagem de sucesso e resetar formulário
-      msgSucesso.classList.remove('d-none');
-      form.reset();
-      form.classList.remove('was-validated');
+        // Validação
+        if (!cadastroForm.checkValidity()) {
+          cadastroForm.classList.add('was-validated');
+          return;
+        }
+
+        if (nome.length < 2) {
+          showAlert('O nome deve ter pelo menos 2 caracteres.');
+          return;
+        }
+
+        if (senha.length < 6) {
+          showAlert('A senha deve ter pelo menos 6 caracteres.');
+          return;
+        }
+
+        // Mostrar loading
+        cadastroText.textContent = 'Criando conta...';
+        cadastroSpinner.classList.remove('d-none');
+
+        try {
+          // Verificar se email já existe
+          const response = await fetch('http://localhost:3000/usuarios');
+          const usuarios = await response.json();
+
+          const emailExiste = usuarios.some(user => user.email === email);
+          if (emailExiste) {
+            showAlert('Este e-mail já está cadastrado.');
+            return;
+          }
+
+          // Criar novo usuário
+          const novoUsuario = {
+            id: generateId(),
+            nome: nome,
+            email: email,
+            senha: senha
+          };
+
+          const createResponse = await fetch('http://localhost:3000/usuarios', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(novoUsuario)
+          });
+
+          if (createResponse.ok) {
+            showAlert('Conta criada com sucesso! Redirecionando para o login...', 'success');
+            cadastroForm.reset();
+            cadastroForm.classList.remove('was-validated');
+
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 2000);
+          } else {
+            showAlert('Erro ao criar conta. Tente novamente.');
+          }
+
+        } catch (error) {
+          console.error('Erro ao cadastrar:', error);
+          showAlert('Erro ao conectar com o servidor. Tente novamente.');
+        } finally {
+          // Restaurar botão
+          cadastroText.textContent = 'Criar Conta';
+          cadastroSpinner.classList.add('d-none');
+        }
+      });
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

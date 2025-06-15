@@ -1,4 +1,18 @@
 {
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Eduardo Borges",
+      "email": "eduardo@example.com",
+      "senha": "123456"
+    },
+    {
+      "id": "vm46mv9rq",
+      "nome": "Eduardo Borges de Souza",
+      "email": "eduardoborgesdesouza4@gmail.com",
+      "senha": "123456"
+    }
+  ],
   "filmes": [
     {
       "id": "1",
@@ -131,6 +145,17 @@
       "diretor": "Diretor Exemplo",
       "duracao": "1h 36m",
       "faixa_etaria": "Indefinido"
+    },
+    {
+      "id": "0a88",
+      "titulo": "Pecadores",
+      "descricao": "Vampiro e música",
+      "imagem": "https://www.claquete.com.br/fotos/filmes/poster/16240_medio.jpg",
+      "lancamento": "2025-06-10",
+      "categoria": "Ação , Terror ",
+      "diretor": " Ryan Coogler",
+      "duracao": "3h 1m",
+      "faixa_etaria": "16+"
     }
   ],
   "favoritos": []

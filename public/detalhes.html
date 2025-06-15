@@ -28,9 +28,12 @@
 
         <nav class="d-none d-md-flex">
           <p class="mx-3"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-          <p class="mx-3"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
-          <p class="mx-3"><a href="detalhes.html" class="text-white text-decoration-none">Detalhes</a></p>
-          <p class="mx-3"><a href="#favoritos" class="text-white text-decoration-none">Favoritos</a></p>
+          <p class="mx-3" id="menu-login-desktop"><a href="login.html" class="text-white text-decoration-none">Login</a></p>
+          <p class="mx-3" id="menu-favoritos-desktop" style="display: none;"><a href="favoritos.html" class="text-white text-decoration-none">Favoritos</a></p>
+          <p class="mx-3" id="menu-logout-desktop" style="display: none;">
+            <span class="text-white me-2">Olá, <span id="nome-usuario-desktop"></span>!</span>
+            <a href="#" id="logout-btn" class="text-white text-decoration-none">Logout</a>
+          </p>
           <p class="mx-3"><a href="#sobre" class="text-white text-decoration-none">Sobre</a></p>
         </nav>
 
@@ -100,6 +103,7 @@
     }
   </script>
 
+  <script src="auth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
